@@ -1,2 +1,2 @@
-call mvn -B clean package -DskipTests
+call mvn -B clean package
 pause

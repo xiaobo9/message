@@ -29,4 +29,6 @@ nbdist/
 
 # vim
 *.swp
-cc4cChat.jks
+
+# log
+*.log

@@ -1,0 +1,15 @@
+.fd-index-content-main-noRight {
+    margin: 150px auto 0;
+    padding-top: 216px;
+    width: 400px;
+    height: 270px;
+    line-height: 22px;
+    text-align: left;
+    font-size: 14px;
+    font-family: 'Microsoft YaHei';
+    color: #666;
+    background: url(../images/icon-no-right.png) no-repeat center top;
+}
+.fd-index-content-main-noRight p {
+    text-align: center;
+}

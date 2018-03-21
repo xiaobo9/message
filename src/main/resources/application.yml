@@ -1,2 +1,24 @@
 server:
-  port: 7777
+  port: 80
+spring:
+  application:
+    name: gitlab-message
+  datasource:
+    url: jdbc:postgresql://${dataSource.ip:172.16.34.17}:${dataSource.port:5432}/postgres?charset=UTF8;appname=gitlab-message
+    username: ${dataSource.user:postgres}
+    password: ${dataSource.password}
+    driver-class-name: org.postgresql.Driver
+  jooq:
+    sql-dialect: Postgres
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+
+gitlab:
+  url: gitlab=http://gitlab.company.com;open=http://open.company.com;code=http://code.company.com;DLgit=http://git.company.com
+  private-token: gitlab=token;open=token;code=token;DLgit=token
+gitlab-message:
+  config-enable:
+    sonar-check: false
+    test-send-message: false
+  url: http://127.0.0.1:7777

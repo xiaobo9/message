@@ -1,0 +1,58 @@
+{
+  "object_kind": "issue",
+  "user": {
+    "name": "testUser",
+    "username": "testUser",
+    "avatar_url": "http://code.company.com/uploads/user/avatar/23/avatar.png"
+  },
+  "project": {
+    "name": "abcdefg-ui",
+    "description": "abcdefg-ui：abcdefg前端控件项▒.▒",
+    "web_url": "http: //code.company.com/abcdefg/abcdefg-ui",
+    "avatar_url": null,
+    "git_ssh_url": "git@code.company.com: abcdefg/abcdefg-ui.git",
+    "git_http_url": "http: //code.company.com/abcdefg/abcdefg-ui.git",
+    "namespace": "abcdefg",
+    "visibility_level": 10,
+    "path_with_namespace": "abcdefg/abcdefg-ui",
+    "default_branch": "dev",
+    "homepage": "http: //code.company.com/abcdefg/abcdefg-ui",
+    "url": "git@code.company.com:abcdefg/abcdefg-ui.git",
+    "ssh_url": "git@code.company.com:abcdefg/abcdefg-ui.git",
+    "http_url": "http://code.company.com/abcdefg/abcdefg-ui.git"
+  },
+  "object_attributes": {
+    "id": 86,
+    "title": "art-radio-group的: disabled没有作用",
+    "assignee_id": 23,
+    "author_id": 529,
+    "project_id": 545,
+    "created_at": "2018-09-0506: 14:15UTC",
+    "updated_at": "2018-09-0607: 51:04UTC",
+    "position": 0,
+    "branch_name": null,
+    "description": "art-radio-group加上: disabled=true不会置灰",
+    "milestone_id": null,
+    "state": "opened",
+    "iid": 42,
+    "updated_by_id": 23,
+    "confidential": false,
+    "deleted_at": null,
+    "due_date": null,
+    "moved_to_id": null,
+    "lock_version": 0,
+    "url": "http://code.company.com/abcdefg/abcdefg-ui/issues/42",
+    "action": "update"
+  },
+  "repository": {
+    "name": "abcdefg-ui",
+    "url": "git@code.company. com: abcdefg/abcdefg-ui.git",
+    "description": "abcdefg-ui：abcdefg前端控件项▒. ▒",
+    "homepage": "http: //code.company.com/abcdefg/abcdefg-ui"
+  },
+  "assignee": {
+    "name": "testUser",
+    "username": "testUser",
+    "avatar_url": "http://code.company.com/uploads/user/avatar/23/avatar.png"
+  }
+}

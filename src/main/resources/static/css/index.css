@@ -1,0 +1,658 @@
+@charset "utf-8";
+/* CSS Document */
+/*公共样式*/
+.fd-fl {
+    float: left;
+}
+.fd-fr {
+    float: right;
+}
+.fd-hide {
+    display: none;
+}
+/* 页面整体容器 */
+.fd-index-contain {
+    position: relative;
+    padding-top: 50px;
+    width: 100%;
+    height: 100%;
+    min-width: 930px;
+}
+/*头部*/
+.fd-index-contain .fd-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    box-shadow: 0 0 9px 3px rgba(4, 0, 0, 0.3);
+    background: url(../images/icon-header-bg.png) 0 0 / cover no-repeat;
+}
+/*标题*/
+.fd-title {
+    overflow: hidden;
+    color: #fefeff;
+    font: 24px/50px "Microsoft Yahei";
+    white-space: nowrap;
+}
+.fd-header .fd-title > span {
+    float: left;
+}
+/*主标题*/
+.fd-header .fd-title .fd-main-tit {
+    padding-left: 76px;
+    padding-right: 13px;
+    font-size: 28px;
+    font-weight: bold;
+    vertical-align: middle;
+    background: url(../images/icon-logo.png) 30px center no-repeat;
+}
+.fd-header .fd-title .fd-main-tit:after {
+    content: '';
+    display: inline-block;
+    margin-left: 12px;
+    width: 1px;
+    height: 26px;
+    vertical-align: middle;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+/*副标题*/
+.fd-header .fd-title .fd-sub-tit {
+    padding-top: 2px;
+    height: 50px;
+}
+/*登录信息列表*/
+.fd-header .fd-login-list {
+    padding-right: 20px;
+    height: 50px;
+    font: 14px/50px "Microsoft Yahei";
+    color: #fff;
+    vertical-align: middle;
+}
+.fd-header .fd-login-list .fd-item {
+    float: left;
+    margin-left: 28px;
+    padding-left: 24px;
+}
+.fd-header .fd-login-list .fd-name {
+    background: url(../images/icon-person.png) left center no-repeat;
+}
+.fd-header .fd-login-list .fd-name:after {
+    content: '';
+    display: inline-block;
+    margin-left: 28px;
+    width: 1px;
+    height: 12px;
+    vertical-align: middle;
+    background-color: rgb(255, 255, 255);
+}
+.fd-header .fd-login-list .fd-back {
+    cursor: pointer;
+    background: url(../images/icon-back.png) left center no-repeat;
+}
+/*主体部分*/
+.fd-index-contain .fd-content {
+    position: relative;
+    padding: 0 10px;
+    width: 100%;
+    min-width: 910px;
+    height: 100%;
+    min-height: 642px;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #e9e9e9;
+}
+/*主要内容*/
+.fd-content .fd-content-main {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    height: 642px;
+    width: 100%;
+    max-width: 1212px;
+    vertical-align: middle;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+}
+/*保持内容部分可以垂直居中的容器*/
+.fd-content .fd-vertical {
+    display: inline-block;
+    width: 1px;
+    height: 100%;
+    vertical-align: middle;
+}
+/*扫码按钮部分*/
+.fd-content .fd-content-main .fd-sm {
+    padding-top: 73px;
+    width: 100%;
+    height: 447px;
+    background: url(../images/icon-sm-bg.png) 0 0 / cover no-repeat;
+}
+/*透明的input框区域*/
+.fd-content .fd-content-main .fd-sm .fd-focus-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 28px;
+    border: none;
+    color: transparent;
+    background: transparent;
+}
+/*未激活的按钮区域*/
+.fd-content .fd-content-main .fd-sm .fd-sm-btn {
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    line-height: 300px;
+    cursor: pointer;
+    background: url(../images/icon-sm-click.png) 0 0 no-repeat;
+}
+/*激活后的按钮区域*/
+.fd-content .fd-content-main .fd-sm .fd-sm-ing {
+    display: none;
+    position: relative;
+    cursor: default;
+    background: url(../images/icon-sm-btn.png) center center no-repeat;
+}
+.fd-content .fd-content-main .fd-sm .fd-sm-ing.active {
+    display: block;
+}
+.fd-content .fd-content-main .fd-sm .fd-sm-ing  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.fd-content .fd-content-main .fd-sm .fd-sm-border {
+    border-radius: 50%;
+    border: 1px solid;
+}
+/*外层圆*/
+.fd-content .fd-content-main .fd-sm .fd-sm-border.big {
+    -webkit-animation:border 3s infinite reverse linear;
+    -moz-animation:border 3s infinite reverse linear;
+    animation:border 3s infinite reverse linear;
+    -o-animation:border 3s infinite reverse linear;
+}
+/*外层圆的动画效果*/
+@-webkit-keyframes border {
+    0% {
+        border-color: rgba(110, 168, 255, 0.5);
+    }
+    25% {
+        border-color: rgba(110, 168, 255, 0.3);
+    }
+    50% {
+        border-color: rgba(110, 168, 255, 0.1);
+    }
+    75% {
+        border-color: rgba(110, 168, 255, 0.3);
+    }
+    100% {
+        border-color: rgba(110, 168, 255, 0.5);
+    }
+}
+@-moz-keyframes border {
+    0% {
+        border-color: rgba(110, 168, 255, 0.5);
+    }
+    25% {
+        border-color: rgba(110, 168, 255, 0.3);
+    }
+    50% {
+        border-color: rgba(110, 168, 255, 0.1);
+    }
+    75% {
+        border-color: rgba(110, 168, 255, 0.3);
+    }
+    100% {
+        border-color: rgba(110, 168, 255, 0.5);
+    }
+}
+@-o-keyframes border {
+    0% {
+        border-color: rgba(110, 168, 255, 0.5);
+    }
+    25% {
+        border-color: rgba(110, 168, 255, 0.3);
+    }
+    50% {
+        border-color: rgba(110, 168, 255, 0.1);
+    }
+    75% {
+        border-color: rgba(110, 168, 255, 0.3);
+    }
+    100% {
+        border-color: rgba(110, 168, 255, 0.5);
+    }
+}
+@-ms-keyframes border {
+    0% {
+        border-color: rgba(110, 168, 255, 0.5);
+    }
+    25% {
+        border-color: rgba(110, 168, 255, 0.3);
+    }
+    50% {
+        border-color: rgba(110, 168, 255, 0.1);
+    }
+    75% {
+        border-color: rgba(110, 168, 255, 0.3);
+    }
+    100% {
+        border-color: rgba(110, 168, 255, 0.5);
+    }
+}
+/*内层圆*/
+.fd-content .fd-content-main .fd-sm .fd-sm-border.small {
+    top: 26px;
+    left: 26px;
+    width: 248px;
+    height: 248px;
+    -webkit-animation:borderIn 3s infinite reverse linear;
+    -moz-animation:borderIn 3s infinite reverse linear;
+    animation:borderIn 3s infinite reverse linear;
+    -o-animation:borderIn 3s infinite reverse linear;
+}
+/*内层圆的动画效果*/
+@-webkit-keyframes borderIn {
+    0% {
+        border-color: rgba(110, 209, 255, 0.5);
+    }
+    25% {
+        border-color: rgba(110, 209, 255, 0.3);
+    }
+    50% {
+        border-color: rgba(110, 209, 255, 0.1);
+    }
+    75% {
+        border-color: rgba(110, 209, 255, 0.3);
+    }
+    100% {
+        border-color: rgba(110, 209, 255, 0.5);
+    }
+}
+@-moz-keyframes borderIn {
+    0% {
+        border-color: rgba(110, 209, 255, 0.5);
+    }
+    25% {
+        border-color: rgba(110, 209, 255, 0.3);
+    }
+    50% {
+        border-color: rgba(110, 209, 255, 0.1);
+    }
+    75% {
+        border-color: rgba(110, 209, 255, 0.3);
+    }
+    100% {
+        border-color: rgba(110, 209, 255, 0.5);
+    }
+}
+@-o-keyframes borderIn {
+    0% {
+        border-color: rgba(110, 209, 255, 0.5);
+    }
+    25% {
+        border-color: rgba(110, 209, 255, 0.3);
+    }
+    50% {
+        border-color: rgba(110, 209, 255, 0.1);
+    }
+    75% {
+        border-color: rgba(110, 209, 255, 0.3);
+    }
+    100% {
+        border-color: rgba(110, 209, 255, 0.5);
+    }
+}
+@-ms-keyframes borderIn {
+    0% {
+        border-color: rgba(110, 209, 255, 0.5);
+    }
+    25% {
+        border-color: rgba(110, 209, 255, 0.3);
+    }
+    50% {
+        border-color: rgba(110, 209, 255, 0.1);
+    }
+    75% {
+        border-color: rgba(110, 209, 255, 0.3);
+    }
+    100% {
+        border-color: rgba(110, 209, 255, 0.5);
+    }
+}
+/*动态转圈的图*/
+.fd-content .fd-content-main .fd-sm .fd-sm-loading {
+    -webkit-animation:circle 1.5s infinite linear;
+    -moz-animation:circle 1.5s infinite linear;
+    animation:circle 1.5s infinite linear;
+    -o-animation:circle 1.5s infinite linear;
+    background: url(../images/icon-sm-ing.png) center center no-repeat;
+}
+/*圆圈的动画效果*/
+@-webkit-keyframes circle {
+    0% {
+        transform:rotate(0deg);
+        -webkit-transform:rotate(0deg);
+        -moz-transform:rotate(0deg);
+        -ms-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+    }
+    100% {
+        transform:rotate(-360deg);
+        -webkit-transform:rotate(-360deg);
+        -moz-transform:rotate(-360deg);
+        -ms-transform:rotate(-360deg);
+        -o-transform:rotate(-360deg);
+    }
+}
+@-moz-keyframes circle {
+    0% {
+        transform:rotate(0deg);
+        -webkit-transform:rotate(0deg);
+        -moz-transform:rotate(0deg);
+        -ms-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+    }
+    100% {
+        transform:rotate(-360deg);
+        -webkit-transform:rotate(-360deg);
+        -moz-transform:rotate(-360deg);
+        -ms-transform:rotate(-360deg);
+        -o-transform:rotate(-360deg);
+    }
+}
+@-o-keyframes circle {
+    0% {
+        transform:rotate(0deg);
+        -webkit-transform:rotate(0deg);
+        -moz-transform:rotate(0deg);
+        -ms-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+    }
+    100% {
+        transform:rotate(-360deg);
+        -webkit-transform:rotate(-360deg);
+        -moz-transform:rotate(-360deg);
+        -ms-transform:rotate(-360deg);
+        -o-transform:rotate(-360deg);
+    }
+}
+@-ms-keyframes circle {
+    0% {
+        transform:rotate(0deg);
+        -webkit-transform:rotate(0deg);
+        -moz-transform:rotate(0deg);
+        -ms-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+    }
+    100% {
+        transform:rotate(-360deg);
+        -webkit-transform:rotate(-360deg);
+        -moz-transform:rotate(-360deg);
+        -ms-transform:rotate(-360deg);
+        -o-transform:rotate(-360deg);
+    }
+}
+/*按钮中的文本*/
+.fd-content .fd-content-main .fd-sm .fd-sm-text {
+    font-size: 24px;
+    text-shadow: 0.5px 0.866px 0 rgb( 255, 255, 255);
+    -webkit-animation:font 3s infinite reverse linear;
+    -moz-animation:font 3s infinite reverse linear;
+    animation:font 3s infinite reverse linear;
+    -o-animation:font 3s infinite reverse linear;
+}
+/*按钮中文本的动画效果*/
+@-webkit-keyframes font {
+    0% {
+        color: rgb(75, 102, 146);
+    }
+    25% {
+        color: rgb(88, 117, 164);
+    }
+    50% {
+        color: rgb(111, 136, 178);
+    }
+    75% {
+        color: rgb(88, 117, 164);
+    }
+    100% {
+        color: rgb(75, 102, 146);
+    }
+}
+@-moz-keyframes font {
+    0% {
+        color: rgb(75, 102, 146);
+    }
+    25% {
+        color: rgb(88, 117, 164);
+    }
+    50% {
+        color: rgb(111, 136, 178);
+    }
+    75% {
+        color: rgb(88, 117, 164);
+    }
+    100% {
+        color: rgb(75, 102, 146);
+    }
+}
+@-o-keyframes font {
+    0% {
+        color: rgb(75, 102, 146);
+    }
+    25% {
+        color: rgb(88, 117, 164);
+    }
+    50% {
+        color: rgb(111, 136, 178);
+    }
+    75% {
+        color: rgb(88, 117, 164);
+    }
+    100% {
+        color: rgb(75, 102, 146);
+    }
+}
+@-ms-keyframes font {
+    0% {
+        color: rgb(75, 102, 146);
+    }
+    25% {
+        color: rgb(88, 117, 164);
+    }
+    50% {
+        color: rgb(111, 136, 178);
+    }
+    75% {
+        color: rgb(88, 117, 164);
+    }
+    100% {
+        color: rgb(75, 102, 146);
+    }
+}
+/*流程解析部分*/
+.fd-content .fd-content-main .fd-note {
+    width: 100%;
+    height: 195px;
+}
+.fd-content .fd-content-main .fd-note .fd-item {
+    float: left;
+    padding-top: 116px;
+    width: 33.3333%;
+    height: 100%;
+    text-align: center;
+    background-position: center 40px;
+    background-repeat: no-repeat;
+}
+/*图标*/
+.fd-content .fd-content-main .fd-note .fd-item-01 {
+    background-image: url(../images/icon-sm-01.png);
+}
+.fd-content .fd-content-main .fd-note .fd-item-02 {
+    background-image: url(../images/icon-sm-02.png);
+}
+.fd-content .fd-content-main .fd-note .fd-item-03 {
+    background-image: url(../images/icon-sm-03.png);
+}
+/*流程解析语句*/
+.fd-content .fd-content-main .fd-note .fd-tip {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    color: #899baf;
+    text-align: center;
+}
+/*序号*/
+.fd-content .fd-content-main .fd-note .fd-tip:before {
+    content: '1';
+    display: inline-block;
+    margin-top: -2px;
+    margin-right: 6px;
+    width: 18px;
+    height: 18px;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    border: 1px solid #b7c2ce;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.fd-content .fd-content-main .fd-note .fd-tip-02:before {
+    content: '2';
+}
+.fd-content .fd-content-main .fd-note .fd-tip-03:before {
+    content: '3';
+}
+/*小箭头*/
+.fd-content .fd-content-main .fd-note .fd-item:not(:last-child) .fd-tip:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    right: 3px;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    border:rgba(137, 155, 175, 0.5) solid;
+    border-width: 1px 1px 0 0;
+    transform: rotate(45deg);
+    margin-bottom: 10px;
+}
+/*错误提示框*/
+.fd-window {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.3);
+}
+.fd-window.show {
+    display: block;
+}
+.fd-window-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    padding-top: 35px;
+    padding-bottom: 50px;
+    width: 320px;
+    height: 240px;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    -webkit-box-shadow: rgba(0,0,0,.2) 0 0 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    border-radius: 3px;
+}
+.fd-window-popup-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    padding: 0 15px;
+    width: 100%;
+    height: 35px;
+    background: #398dee;
+    border: 1px solid #3083e3;
+    border-radius: 3px 3px 0 0;
+}
+.fd-window-popup-header>h3 {
+    color: #fff;
+    font: 700 14px/32px microsoft yahei;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.fd-window-popup-header .window-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35px;
+    height: 100%;
+    font-size: 26px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+.fd-window-popup-header .window-close:hover {
+    background-color: #f5696c;
+}
+.fd-window-popup-body {
+    padding: 10px 10px 10px 18px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #444;
+    font: 14px/155px microsoft yahei;
+    background-color: #fff;
+}
+.fd-window-popup-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 15px 0;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background: #fafafa;
+    border-radius: 0 0 3px 3px;
+}
+.fd-window-popup-footer>.window-btn {
+    position: relative;
+    display: inline-block;
+    margin: 0 10px;
+    height: 28px;
+    min-width: 75px;
+    cursor: pointer;
+    padding: 0 10px;
+    text-align: center;
+    font: 12px/26px microsoft yahei;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    -webkit-transition: background .3s linear 0s;
+    transition: background .3s linear 0s;
+}
+.fd-window-popup-footer>.window-btn.confirm {
+    color: #fff;
+    border-color: #398dee;
+    background-color: #4d9cf7;
+}
+.fd-window-popup-footer>.window-btn.cancel {
+    color: #444;
+    border-color: #f2f2f2;
+    background-color: #f2f2f2;
+}

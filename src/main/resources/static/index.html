@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gitlab Message</title>
+</head>
+<style type="text/css">
+    #url {
+        display: inline-block;
+        width: 600px;
+    }
+</style>
+<script type="text/javascript" src="js/lib/axios/axios.min.js"></script>
+<script type="text/javascript" src="js/lib/es6-promise/es6-promise.auto.min.js"></script>
+<script type="text/javascript" src="js/marked.min.js"></script>
+<body>
+<div id="content"></div>
+<div id="app" class="fd-index-contain">
+</div>
+</body>
+<script src="js/lib/vue/vue.js"></script>
+<script src="js/index.js"></script>
+<script>
+    var text = " # 开发流程说明\n" +
+        " \n" +
+        " ## 遵循分支命名规范\n" +
+        " \n" +
+        " **必须严格按照 `git flow` 的分支命名**\n" +
+        " \n" +
+        " * `master` 暂时无用\n" +
+        " * `develop` 默认展示的分支。主要用于收集需求。完成的 `feature` 分支要通过`主程审查`后合并到此分支\n" +
+        " * `feature/根据功能尽量进行有意义的命名` 功能（需求）分支，开发人员在自建的该类分支上完成领到的需求。每个 `feature` 分支上的需求要尽可能地小，即便领到的是复杂需求也请尽可能拆分数个分支进行开发，以便部分功能可以发布出去，以便快速迭代。\n" +
+        " * `release/**` `develop` 分支收集一定量的需求，到了规定的时间点后创建此分支。开发人员需要创建 `bugfix` 分支修改此分支上发现的问题，经`主程审查`后合并到当前 `release` 分支\n" +
+        " * `bugfix/**` 修改开发过程中 `bug` 的分支，视当前开发进度，该类分支可能基于 `develop` 或者 `release` 分支创建\n" +
+        " * `hotfix/**` 修改线上问题的分支，问题修复后，需要合并到 `develop` `master`，并视情况合并到仍然活跃（现场还在使用）的 `release` 分支上\n" +
+        " \n" +
+        " \n" +
+        " ## 合并请求流程\n" +
+        " \n" +
+        " 1. 开发人员在 `代码基本完成，测试人员介入之前` 就要提起合并请求，提起合并请求的时候标记 `WIP (工作进行中)` 状态\n" +
+        " 2. 开发人员提起合并请求的时候，选择对应的里程碑\n" +
+        " 3. 开发人员提起测试的时候，开启一个 `测试讨论` ，并 `@` 对应的测试人员\n" +
+        " 4. `主程` 审查代码，如果有疑问，主程 `开启问题讨论`\n" +
+        " 5. 开发人员修改测试问题和主程开启的讨论问题，commit 并 push 代码\n" +
+        " 6. 测试人员测试通过后，评论测试结果并关闭 `测试讨论`，可同时取消 WIP 状态\n" +
+        " \n" +
+        " \n" +
+        " 上述流程中 **不得** 随意进行这种操作: `关闭` 当前合并请求后并 `开启` 新的合并请求.\n";
+    document.getElementById('content').innerHTML = marked(text);
+
+</script>
+</html>

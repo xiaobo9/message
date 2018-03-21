@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head lang="zh-cn">
+    <meta charset="UTF-8">
+    <script src="js/lib/es6-promise/es6-promise.auto.min.js"></script>
+    <script src="js/lib/axios/axios.min.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="js/lib/element/index.css">
+</head>
+<body>
+<div id="app">
+    <el-container v-loading="loading">
+        <el-main>
+            <el-container>
+                <template>
+                    <el-table :data="checkResult" style="width: 100%">
+                        <el-table-column prop="email" label="作者" width="180"></el-table-column>
+                        <el-table-column prop="projectName" label="项目名称">
+                            <template slot-scope="scope">
+                                <a href="javascript:void(0);"
+                                   @click="redirectSonar(scope.$index,scope.row.email,scope.row.projectId, scope.row)">
+                                    {{scope.row.projectName}}
+                                </a>
+                            </template>
+                        </el-table-column>
+                        <el-table-column prop="resultJson.BLOCKER" label="阻断"></el-table-column>
+                        <el-table-column prop="resultJson.CRITICAL" label="严重"></el-table-column>
+                        <el-table-column prop="resultJson.MAJOR" label="主要"></el-table-column>
+                        <el-table-column prop="resultJson.MINOR" label="次要"></el-table-column>
+                        <el-table-column prop="resultJson.INFO" label="提示"></el-table-column>
+                        <el-table-column label="操作">
+                            <template slot-scope="scope">
+                                <a href="javascript:void(0);"
+                                   @click="redirectSonar(scope.$index,scope.row.email,scope.row.projectId, scope.row)">
+                                    打开sonar
+                                </a>
+                            </template>
+                        </el-table-column>
+                    </el-table>
+                </template>
+            </el-container>
+        </el-main>
+    </el-container>
+</div>
+</body>
+<!-- import Vue before Element -->
+<script src="js/lib/vue/vue.js"></script>
+<!-- import JavaScript -->
+<script src="js/lib/element/index.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            loading: false,
+            checkResult: []
+        },
+        methods: {
+            list: function () {
+                var _this = this;
+                this.loading = true;
+                var url = "/sonar/checkResult?author=" + this.getUrlKey("author") + "&checkId=" + this.getUrlKey("checkId");
+                axios.get(url)
+                    .then(function (response) {
+                        _this.loading = false;
+                        var data = response.data;
+                        for (var i = 0; i < data.length; i++) {
+                            data[i].resultJson = JSON.parse(data[i].result);
+                        }
+                        console.log(data);
+                        _this.checkResult = data;
+                    }).catch(function (reason) {
+                    _this.loading = false;
+                    console.log(reason);
+                })
+            },
+            redirectSonar: function (index, email, projecId, row) {
+                window.open("/sonar/redirect?email=" + email + "&projectId=" + projecId);
+            },
+            getUrlKey: function (name) {
+                return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.href) || [, ""])[1].replace(/\+/g, '%20')) || null
+            }
+        },
+        created: function () {
+            this.list();
+        }
+
+    })
+</script>
+</html>
