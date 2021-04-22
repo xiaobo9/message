@@ -19,7 +19,6 @@ import java.util.Map;
 @ToString
 public class Tip {
 
-    private static String sonarUrl = "http://sonar.company.com";
     private String id;
 
     private String email;

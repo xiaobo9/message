@@ -1,12 +1,13 @@
 package xiaobo9.message.sonar;
 
-import xiaobo9.message.sonar.entity.UserSonarResult;
-import xiaobo9.message.sonar.bean.SonarWebHookMessage;
-import xiaobo9.message.sonar.repository.UserSonarResultRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import xiaobo9.message.sonar.bean.SonarWebHookMessage;
+import xiaobo9.message.sonar.entity.UserSonarResult;
+import xiaobo9.message.sonar.repository.UserSonarResultRepository;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -30,7 +31,8 @@ public class SonarController {
     @Autowired
     private SonarQubeService sonarQubeService;
 
-    private String sonarUrl = "http://sonar.company.com";
+    @Value("${sonar.server")
+    private String sonarUrl;
 
     /**
      * 手动通知检查结果

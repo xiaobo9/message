@@ -5,8 +5,9 @@ import com.google.common.collect.Maps;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import xiaobo9.message.sonar.bean.SonarDBProperties;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -25,17 +26,12 @@ import java.util.Map;
 @Setter
 @Service
 public class SonarJdbcService {
+    private final SonarDBProperties sonarDb;
 
-    @Value("${db.host:sonar.company.com}")
-    private String dbHost;
-    @Value("${db.port:3306}")
-    private String dbPort;
-    @Value("${db.user}")
-    private String dbUser;
-    @Value("${db.password}")
-    private String dbPassword;
-    @Value("${gitlab-message.url}")
-    private String serverUrl;
+    @Autowired
+    public SonarJdbcService(SonarDBProperties sonarDb) {
+        this.sonarDb = sonarDb;
+    }
 
     List<Tip> getTips() {
         String sql = "select p.name,p.long_name,p.kee,issue.author_login,severity, sl\n" +
@@ -72,9 +68,8 @@ public class SonarJdbcService {
     private Connection getConnection() {
         Connection conn = null;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            String url = String.format("jdbc:mysql://%s:%s/sonar", dbHost, dbPort);
-            conn = DriverManager.getConnection(url, dbUser, dbPassword);
+            Class.forName(sonarDb.getDriver());
+            conn = DriverManager.getConnection(sonarDb.getUrl(), sonarDb.getUser(), sonarDb.getPassword());
         } catch (Exception e) {
             log.warn("", e);
         }

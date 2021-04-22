@@ -29,9 +29,6 @@ public class MessageService {
     @Value("${salt:message}")
     private String SALT = "message";
 
-    @Value("${gitlab-message.url}")
-    private String serverUrl;
-
     private final IMessageSender messageSender;
 
     private final BuilderFactory builderFactory;

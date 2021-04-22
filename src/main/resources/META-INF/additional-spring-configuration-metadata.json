@@ -1,0 +1,21 @@
+{
+  "properties": [
+    {
+      "name": "sonar.db.host",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "sonar.db.port",
+      "type": "java.lang.Integer"
+    },
+    {
+      "name": "sonar.db.user",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "sonar.db.password",
+      "type": "java.lang.String"
+    }
+  ]
+}
+

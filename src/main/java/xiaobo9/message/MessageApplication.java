@@ -11,6 +11,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import xiaobo9.message.gitlab.GitlabInfo;
 import xiaobo9.message.sonar.SonarConfig;
+import xiaobo9.message.sonar.bean.SonarDBProperties;
 
 /**
  * MessageApplication
@@ -20,7 +21,7 @@ import xiaobo9.message.sonar.SonarConfig;
  */
 @EnableScheduling
 @EnableSwagger2
-@EnableConfigurationProperties({GitlabInfo.class, SonarConfig.class})
+@EnableConfigurationProperties({GitlabInfo.class, SonarConfig.class, SonarDBProperties.class})
 @ComponentScan(value = {"xiaobo9.message"})
 @ServletComponentScan(basePackages = {"xiaobo9.message.filter"})
 @EnableAutoConfiguration

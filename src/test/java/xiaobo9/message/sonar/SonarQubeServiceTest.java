@@ -12,7 +12,7 @@ class SonarQubeServiceTest {
 
     @Test
     void multiMessage() {
-        SonarQubeService sonarQubeService = new SonarQubeService(null, null, null);
+        SonarQubeService sonarQubeService = new SonarQubeService(null, null, null, null);
         HashMap<String, Integer> issuesCount = Maps.newHashMap();
         issuesCount.put("BLOCKER", 1);
         issuesCount.put("CRITICAL", 1);

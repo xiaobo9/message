@@ -29,7 +29,7 @@ public class WebHookService {
     @Value("${gitlab-message.url}")
     private String serverUrl;
 
-    private static OkHttpClient okHttpClient;
+    private static final OkHttpClient okHttpClient;
 
     static {
         okHttpClient = new OkHttpClient.Builder()
@@ -37,7 +37,7 @@ public class WebHookService {
                 .build();
     }
 
-    private static ObjectMapper objectMapper = new ObjectMapper();
+    private static final ObjectMapper objectMapper = new ObjectMapper();
 
     static {
         objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
@@ -49,7 +49,14 @@ public class WebHookService {
         this.gitlabService = gitlabService;
     }
 
-    public Project addHook2Project(String token, String projectId) throws IOException {
+    /**
+     * 给项目添加 web hook
+     *
+     * @param token     token
+     * @param projectId project id
+     * @throws IOException exception
+     */
+    public void addHook2Project(String token, String projectId) throws IOException {
         log.info("{} {} 新建的项目", token, projectId);
         if (StringUtils.isBlank(token) || "null".equalsIgnoreCase(token)) {
             token = "gitlab";
@@ -63,7 +70,6 @@ public class WebHookService {
         Project project = this.getProject(gitlab, projectId);
 
         this.addHook(gitlab, project);
-        return project;
     }
 
     public void allAddHook(String gitName) {
@@ -134,8 +140,9 @@ public class WebHookService {
     }
 
     private List<Project> getProjects(Gitlab gitlab, int page) {
-        long start = System.currentTimeMillis();
         String url = gitlab.projects(page);
+        long start = System.currentTimeMillis();
+
         Request request = new Request.Builder().url(url).header(Gitlab.TOKEN_NAME, gitlab.getToken()).get().build();
         Call call = okHttpClient.newCall(request);
         try (Response response = call.execute()) {

@@ -11,7 +11,6 @@ spring:
   jooq:
     sql-dialect: Postgres
   jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: false
 
 gitlab:
@@ -22,3 +21,6 @@ gitlab-message:
     sonar-check: false
     test-send-message: false
   url: http://127.0.0.1:7777
+
+sonar:
+  server: http://sonar.company.com

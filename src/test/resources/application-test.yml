@@ -1,11 +1,12 @@
-db:
-  host: test
-  port: 123
-  user: test
-  password: test
+sonar:
+  db:
+    driver: com.mysql.jdbc.Driver
+    url: jdbc:mysql://test.test.test:3306/sonar
+    user: test
+    password: test
 spring:
   datasource:
-    url:  jdbc:h2:mem:test
+    url: jdbc:h2:mem:test
     username: test
     password: test
     driver-class-name: org.h2.Driver
