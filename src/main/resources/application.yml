@@ -1,6 +1,11 @@
 server:
   port: 80
+
 spring:
+  mvc:
+    pathmatch:
+      # https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.6-Release-Notes#pathpattern-based-path-matching-strategy-for-spring-mvc
+      matching-strategy: ant-path-matcher
   application:
     name: gitlab-message
   datasource:

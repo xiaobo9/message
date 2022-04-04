@@ -4,7 +4,9 @@ spring:
     username: ${dataSource.user:sa}
     password: ${dataSource.password:123456}
     driver-class-name: org.h2.Driver
-    schema: classpath:db/schema.sql
   jpa:
     hibernate:
       ddl-auto: create
+  sql:
+    init:
+      schema-locations: classpath:db/schema.sql

@@ -1,7 +1,8 @@
 package xiaobo9.message.sonar;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,7 +13,7 @@ public class MetricEnumTest {
     @Test
     public void test() {
         List<String> list = Arrays.stream(MetricEnum.values()).map(MetricEnum::key).collect(Collectors.toList());
-        Assert.assertTrue(list.contains("blocker_violations"));
+        Assertions.assertTrue(list.contains("blocker_violations"));
     }
 
 }

@@ -51,3 +51,11 @@ mvn jib:build
 * 构建情况，构建次数，成功次数
 * 合并情况，提了几个合并，合并了几个别人的请求
 * `sonar` 检查结果
+
+## CHANGE LOG
+
+2022年4月4日 升级到 java11, spring boot 2.6.6 和 junit 5，删除对 junit 4 的依赖，调整单元测试代码
+
+## 依赖
+
+试试 <https://github.com/springdoc/springdoc-openapi>

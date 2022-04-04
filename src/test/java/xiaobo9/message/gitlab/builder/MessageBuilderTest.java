@@ -1,8 +1,8 @@
 package xiaobo9.message.gitlab.builder;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.util.Set;
 
@@ -15,7 +15,7 @@ public class MessageBuilderTest {
         log.info(message);
         Set<String> user = new MessageBuilder().getUserFromAt(message);
         log.info("{}", user);
-        Assert.assertEquals("", 2, user.size());
-        Assert.assertTrue("", user.contains("abc") && user.contains("abc-1"));
+        Assertions.assertEquals(2, user.size(), "");
+        Assertions.assertTrue(user.contains("abc") && user.contains("abc-1"), "");
     }
 }

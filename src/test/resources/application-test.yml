@@ -10,5 +10,7 @@ spring:
     username: test
     password: test
     driver-class-name: org.h2.Driver
-    schema:
-      - classpath:/database/schema.sql
+  sql:
+    init:
+      schema-locations:
+        - classpath:/database/schema.sql
