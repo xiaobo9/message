@@ -7,12 +7,14 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.restdocs.RestDocumentationContextProvider;
 import org.springframework.restdocs.RestDocumentationExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
+import javax.ws.rs.Path;
 
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
@@ -25,15 +27,12 @@ import static org.springframework.restdocs.request.RequestDocumentation.requestP
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-// @SpringBootTest(classes = MessageController.class)
-@WebMvcTest(controllers = MessageController.class)
+@SpringBootTest(classes = MessageController.class)
+//@WebMvcTest(controllers = MessageController.class)
 // @ExtendWith({RestDocumentationExtension.class, MockitoExtension.class})
 @ExtendWith({RestDocumentationExtension.class})
 @AutoConfigureRestDocs
-public class MessageControllerTest {
-//    @SpringBootApplication
-//    public static class ApplicationForTest {
-//    }
+public class MessageController2Test {
 
     private MockMvc mockMvc;
 
@@ -43,6 +42,7 @@ public class MessageControllerTest {
     @MockBean
     private MessageService service;
 
+    @Path("/ab")
     @BeforeEach
     public void setUp(RestDocumentationContextProvider restDocumentation) {
         this.mockMvc = MockMvcBuilders.standaloneSetup(controller)

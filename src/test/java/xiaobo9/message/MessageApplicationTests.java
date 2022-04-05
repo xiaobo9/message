@@ -15,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * https://spring.io/guides/gs/testing-web/
  */
 @Slf4j
-@SpringBootTest
+@SpringBootTest(classes = MessageApplication.class)
 @ActiveProfiles("test")
 public class MessageApplicationTests {
     @Autowired

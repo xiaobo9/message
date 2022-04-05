@@ -1,3 +1,4 @@
+
 # gitalb 事件发送消息
 
 ## 构建
@@ -59,3 +60,7 @@ mvn jib:build
 ## 依赖
 
 试试 <https://github.com/springdoc/springdoc-openapi>
+
+## restdocs
+
+https://docs.spring.io/spring-restdocs/docs/current/reference/html5/#getting-started-build-configuration
