@@ -1,6 +1,12 @@
 
 # gitalb 事件发送消息
 
+## test
+
+```bash
+mvn clean test -DsurefireArgLine="-Dfoo=bar"
+```
+
 ## 构建
 
 通过 google jib maven plugin 生成 docker 镜像
