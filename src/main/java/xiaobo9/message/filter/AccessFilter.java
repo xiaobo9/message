@@ -25,11 +25,6 @@ public class AccessFilter implements Filter {
 
     private static final String REDIRECT = "/redirect";
 
-    @Override
-    public void destroy() {
-        // Do nothing
-    }
-
     private final Set<String> excludes = Sets.newHashSet("/css", "/images", "/js", "/favicon.ico");
 
     @Override
@@ -71,8 +66,4 @@ public class AccessFilter implements Filter {
         return new String(Base64.decodeBase64(url), StandardCharsets.UTF_8);
     }
 
-    @Override
-    public void init(FilterConfig arg0) {
-        // Do nothing
-    }
 }

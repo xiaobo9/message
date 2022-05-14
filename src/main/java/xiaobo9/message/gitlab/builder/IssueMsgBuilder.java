@@ -1,13 +1,13 @@
 package xiaobo9.message.gitlab.builder;
 
 import com.google.gson.Gson;
-import xiaobo9.message.gitlab.GitlabService;
-import xiaobo9.message.gitlab.bean.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
+import xiaobo9.message.gitlab.GitlabService;
+import xiaobo9.message.gitlab.bean.*;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,4 +1,4 @@
-[![codecov](https://codecov.io/gh/xiaobo9/gitlab-message/branch/master/graph/badge.svg)](https://codecov.io/gh/xiaobo9/gitlab-message)
+[![codecov](https://codecov.io/gh/xiaobo9/message/branch/master/graph/badge.svg)](https://codecov.io/gh/xiaobo9/message)
 
 # gitalb 事件发送消息
 

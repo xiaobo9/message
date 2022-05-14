@@ -14,10 +14,6 @@ import java.io.IOException;
 @Slf4j
 @WebFilter(filterName = "gitlabAccessFilter", urlPatterns = "/message/gitlab/*")
 public class GitlabAccessFilter implements Filter {
-    @Override
-    public void destroy() {
-        // Do nothing
-    }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
@@ -25,8 +21,4 @@ public class GitlabAccessFilter implements Filter {
         filterChain.doFilter(request, response);
     }
 
-    @Override
-    public void init(FilterConfig arg0) {
-        // Do nothing
-    }
 }
