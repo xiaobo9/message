@@ -49,7 +49,7 @@ public class MessageController {
      * @param token        token
      * @return 结果
      */
-    @RequestMapping("gitlab")
+    @PostMapping("gitlab")
     public ResponseEntity<Object> gitlab(
             @RequestHeader("X-Gitlab-Event") String eventType,
             @RequestBody String eventContent,
@@ -71,7 +71,7 @@ public class MessageController {
      * @param url 要注册的 gitlab 工程地址
      * @return 注册结果
      */
-    @RequestMapping("register")
+    @RequestMapping(path = "register", method = {RequestMethod.GET, RequestMethod.POST})
     public ResponseEntity<Object> register(@RequestParam("url") String url) {
         if (StringUtils.isBlank(url)) {
             Map<String, String> result = new HashMap<>();

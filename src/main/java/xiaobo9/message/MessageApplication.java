@@ -12,7 +12,6 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Component;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import xiaobo9.message.gitlab.GitlabInfo;
 import xiaobo9.message.sonar.SonarConfig;
 import xiaobo9.message.sonar.bean.SonarDBProperties;
@@ -24,7 +23,6 @@ import xiaobo9.message.sonar.bean.SonarDBProperties;
  * @version 4.0
  */
 @EnableScheduling
-@EnableSwagger2
 @EnableConfigurationProperties({GitlabInfo.class, SonarConfig.class, SonarDBProperties.class})
 @ComponentScan(value = {"xiaobo9.message"})
 @ServletComponentScan(basePackages = {"xiaobo9.message.filter"})
